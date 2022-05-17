@@ -3552,8 +3552,9 @@ GameObject:
   - component: {fileID: 1898718389}
   - component: {fileID: 1898718388}
   - component: {fileID: 1898718387}
+  - component: {fileID: 1898718390}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: spawnr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3607,6 +3608,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898718390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898718386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad512a882770934fbd2c40c80953096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zombie: {fileID: 2213350563329469247, guid: f0d354c8c4d1dd74f8ff1a485d2fcde9, type: 3}
+  zombInterval: 3.5
 --- !u!1 &1900870741
 GameObject:
   m_ObjectHideFlags: 0
