@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            ScoreScript.scoreValue += 10;
             Destroy(gameObject);
         }
     }
