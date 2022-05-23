@@ -2,28 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]
-    private int health = 100;
-    private int MAX_HEALTH = 100;
+    public Slider slider;
+    public int MaxHealth = 100;
+    public int currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        currentHealth = MaxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-    }
-    public void SetHealth(int maxHealth, int health)
-    {
-        this.MAX_HEALTH = maxHealth;
-        this.health = health;
     }
 
     public void Damage(int amount)
@@ -32,8 +28,8 @@ public class Health : MonoBehaviour
         {
             throw new System.ArgumentOutOfRangeException("cant have negative damage");
         }
-        this.health -= amount;
-        if (health <= 0)
+        currentHealth -= amount;
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -41,14 +37,14 @@ public class Health : MonoBehaviour
 
     public void Heal(int amount)
     {
-        bool WouldBeOverMaxHealth = health + amount > MAX_HEALTH;
+        bool WouldBeOverMaxHealth = currentHealth + amount > MaxHealth;
         if (WouldBeOverMaxHealth)
         {
-            this.health = MAX_HEALTH;
+            this.currentHealth = MaxHealth;
         }
         else
         {
-            this.health += amount;
+            this.currentHealth += amount;
         }
         if (amount < 0)
         {
@@ -62,5 +58,15 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
         SceneManager.LoadScene("GameOver");
         
+    }
+    public void SetHealth(int health, int hp)
+    {
+        slider.value = health;
+    }
+
+    public void SetMaxHealth(int health)
+    {
+        slider.maxValue = health;
+        slider.value = health;
     }
 }  

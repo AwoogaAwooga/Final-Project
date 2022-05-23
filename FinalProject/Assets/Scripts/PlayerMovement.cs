@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
     public Camera cam;
+    public Health healthBar;
     // Start is called before the first frame update
     void Start()
     {

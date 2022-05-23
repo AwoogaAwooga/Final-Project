@@ -207,4 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c855b642ed0ccf4bb9a7b867b396496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  slider: {fileID: 0}
+  MaxHealth: 4
+  currentHealth: 4

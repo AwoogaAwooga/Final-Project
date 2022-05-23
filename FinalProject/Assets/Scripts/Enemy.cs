@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     public Transform Player;
     [SerializeField]
-    private int damage = 5;
+    private int damage = 1;
     [SerializeField]
     private float speed = 1.5f;
 
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
             if (collider.GetComponent<Health>() != null)
             {
                 collider.GetComponent<Health>().Damage(damage);
-                this.GetComponent<Health>().Damage(10000);
+                this.GetComponent<Health>().Damage(25);
             }
         }
     }
