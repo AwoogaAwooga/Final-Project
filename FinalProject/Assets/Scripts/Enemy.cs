@@ -6,13 +6,10 @@ public class Enemy : MonoBehaviour
 {
     private Rigidbody2D rb;
     public Transform Player;
-    [SerializeField]
-    private int damage = 1;
-    [SerializeField]
-    private float speed = 1.5f;
+    public int damage = 25;
+    public float speed = 1.5f;
 
     [SerializeField]
-    private EnemyData data;
     private GameObject player;
     public int health = 100;
 
@@ -20,7 +17,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        SetEnemyValues();
         rb = this.GetComponent<Rigidbody2D>();
     }
 
@@ -34,26 +30,21 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void SetEnemyValues()
-    {
-        GetComponent<Health>().SetHealth(data.hp, data.hp);
-        damage = data.damage;
-        speed = data.speed;
-    }
+
 
     private void FollowPlayer()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider )
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
             if (collider.GetComponent<Health>() != null)
             {
                 collider.GetComponent<Health>().Damage(damage);
-                this.GetComponent<Health>().Damage(25);
+                Destroy(gameObject);
             }
         }
     }

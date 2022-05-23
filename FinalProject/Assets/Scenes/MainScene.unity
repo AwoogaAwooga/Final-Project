@@ -1222,6 +1222,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087851431}
   m_CullTransparentMesh: 1
+--- !u!114 &1147280191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4285955394060021181, guid: c071af4312b939e41a964f869f3d5493, type: 3}
+  m_PrefabInstance: {fileID: 424512461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9b9e5783013b74c9cf21af1ae475e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1164003808
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,6 +5133,18 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3175435206987697542, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
+      propertyPath: damage
+      value: 
+      objectReference: {fileID: 1147280191}
+    - target: {fileID: 3175435206987697542, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 1479073736}
+    - target: {fileID: 3175435206987697542, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1479073736}
     - target: {fileID: 3175435206987697656, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
       propertyPath: health
       value: 4
@@ -5137,6 +5160,10 @@ PrefabInstance:
     - target: {fileID: 3175435206987697656, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
       propertyPath: currentHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175435206987697659, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}

@@ -35,23 +35,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)
-    {
-        bool WouldBeOverMaxHealth = currentHealth + amount > MaxHealth;
-        if (WouldBeOverMaxHealth)
-        {
-            this.currentHealth = MaxHealth;
-        }
-        else
-        {
-            this.currentHealth += amount;
-        }
-        if (amount < 0)
-        {
-            throw new System.ArgumentOutOfRangeException("cant have negative healing");
-        }
-        
-    }
     private void Die()
     {
         Debug.Log("im dead");
