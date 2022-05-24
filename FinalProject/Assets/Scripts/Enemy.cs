@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    
     private Rigidbody2D rb;
     public Transform Player;
     [SerializeField]
@@ -64,6 +65,7 @@ public class Enemy : MonoBehaviour
         {
             ScoreScript.scoreValue += 10;
             Destroy(gameObject);
+            BackgroundAudio.PlaySound("enemyDeath");
         }
     }
 

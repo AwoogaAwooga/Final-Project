@@ -12,7 +12,7 @@ public class BackgroundAudio : MonoBehaviour
         playerHitSound = Resources.Load<AudioClip>("playerHit");
         FireSound = Resources.Load<AudioClip>("FireSound");
         enemyDeathSound = Resources.Load<AudioClip>("enemyDeathSound");
-
+        
         audioSrc = GetComponent<AudioSource>();
     }
 
