@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Slider slider;
     public int MaxHealth = 100;
     public int currentHealth;
+    public Text HealthValueText;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        HealthValueText.text = "Health: " + currentHealth;
     }
 
     public void Damage(int amount)
@@ -41,15 +41,5 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
         SceneManager.LoadScene("GameOver");
         
-    }
-    public void SetHealth(int health, int hp)
-    {
-        slider.value = health;
-    }
-
-    public void SetMaxHealth(int health)
-    {
-        slider.maxValue = health;
-        slider.value = health;
     }
 }  

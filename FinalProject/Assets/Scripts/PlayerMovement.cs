@@ -9,13 +9,11 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
     public Camera cam;
-    public Health script;
-    public Health healthBar;
-    public Enemy damage;
+    public float health = 100f;
     // Start is called before the first frame update
     void Start()
     {
-        script.currentHealth = script.MaxHealth;
+
     }
 
     // Update is called once per frame
@@ -37,8 +35,4 @@ public class PlayerMovement : MonoBehaviour
         rb.rotation = angle;
     }
 
-    void TakeDamage(int damage)
-    {
-        script.currentHealth = damage;
-    }
 }
