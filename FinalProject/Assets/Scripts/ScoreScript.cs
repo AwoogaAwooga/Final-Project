@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
     public static int scoreValue = 0;
-    Text score;
-    
+    public Text score;
+    CoinPickup coin;
+    float _Value = 25;
+    public float maxScore = 10000000;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +22,10 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         score.text = "Score: " + scoreValue;
+    }
+
+   void AddScore(float _Value)
+    {
+        scoreValue = (int)Mathf.Clamp(scoreValue + _Value, 0, maxScore);
     }
 }
