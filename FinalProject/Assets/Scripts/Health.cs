@@ -6,13 +6,15 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public int MaxHealth = 100;
+    public int MaxHealth;
     public int currentHealth;
     public Text HealthValueText;
+    float _Value = 25;
 
     // Start is called before the first frame update
     void Start()
     {
+        MaxHealth = 100;
         currentHealth = MaxHealth;
     }
 
@@ -34,12 +36,17 @@ public class Health : MonoBehaviour
             Die();
         }
     }
+    public void addHealth(float _Value)
+    {
+        currentHealth = (int)Mathf.Clamp(currentHealth + _Value, 0, MaxHealth);
+    }
 
     private void Die()
     {
         Debug.Log("im dead");
         Destroy(gameObject);
         SceneManager.LoadScene("GameOver");
-        
+
     }
+
 }  
