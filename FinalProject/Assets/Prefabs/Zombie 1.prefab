@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4071886250608313460}
   - component: {fileID: 1114698564001574011}
   - component: {fileID: 4285955394060021181}
-  - component: {fileID: 7642771522098507324}
   m_Layer: 0
   m_Name: Zombie 1
   m_TagString: Untagged
@@ -196,23 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9b9e5783013b74c9cf21af1ae475e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 1114698564001574011}
   Player: {fileID: 3175435206987697541, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
-  damage: 1
+  damage: 20
   speed: 1.5
-  data: {fileID: 11400000, guid: a657489c8b8156b4d8ce37f2c67f596f, type: 2}
+  player: {fileID: 3175435206987697537, guid: 07fefabb6c0a59e4cbb0455d7ae831c6, type: 3}
   health: 100
---- !u!114 &7642771522098507324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2504865298086446090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c855b642ed0ccf4bb9a7b867b396496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  MaxHealth: 4
-  currentHealth: 0
