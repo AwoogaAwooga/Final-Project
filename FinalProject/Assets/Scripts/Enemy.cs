@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject player;
     public int health = 100;
+    public List<GameObject> droppeditems = new List<GameObject>();
+
+    public bool isRandomized;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +58,19 @@ public class Enemy : MonoBehaviour
         {
             ScoreScript.scoreValue += 10;
             Destroy(gameObject);
+            SpawnObjects();
         }
+    }
+
+    public void SpawnObjects()
+    {
+        int index = isRandomized ? Random.Range(0, droppeditems.Count) : 0;
+        if (droppeditems.Count > 0)
+        {
+            Instantiate(droppeditems[index], transform.position, Quaternion.identity);
+
+        }
+
     }
 
 }
