@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public Transform Player;
     public int damage = 25;
     public float speed = 1.5f;
+    public AudioClip enemyDeathSound;
+    
 
     [SerializeField]
     private GameObject player;
@@ -16,9 +18,11 @@ public class Enemy : MonoBehaviour
 
     public bool isRandomized;
 
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         rb = this.GetComponent<Rigidbody2D>();
     }
@@ -48,6 +52,7 @@ public class Enemy : MonoBehaviour
             {
                 collider.GetComponent<Health>().Damage(damage);
                 Destroy(gameObject);
+                PlaySound(enemyDeathSound);
             }
         }
     }
@@ -58,7 +63,9 @@ public class Enemy : MonoBehaviour
         {
             ScoreScript.scoreValue += 10;
             Destroy(gameObject);
+            PlaySound(enemyDeathSound);
             SpawnObjects();
+            
         }
     }
 
@@ -73,4 +80,9 @@ public class Enemy : MonoBehaviour
 
     }
 
+      public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+
+    }
 }
