@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject Zombie;
     [SerializeField]
     private float zombInterval = 3.5f;
+    private float multiplier = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,18 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (ScoreScript.scoreValue > 150)
+        {
+            zombInterval *= multiplier;
+        }
+        if (ScoreScript.scoreValue > 400)
+        {
+            zombInterval *= multiplier;
+        }
+        if (ScoreScript.scoreValue > 1000)
+        {
+            zombInterval *= multiplier;
+        }
     }
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
