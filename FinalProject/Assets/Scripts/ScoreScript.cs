@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    public static int scoreValue = 0;
+    public static int scoreValue;
     Text score;
+    public int _Value = 25;
     
     // Start is called before the first frame update
     void Start()
     {
         score = GetComponent<Text>();
+        scoreValue = 0;
 
     }
 
@@ -19,5 +21,11 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         score.text = "Score: " + scoreValue;
+    }
+
+    public void AddScore(float _Value)
+    {
+        scoreValue = (int)Mathf.Clamp(scoreValue + _Value, 0, scoreValue );
+
     }
 }
